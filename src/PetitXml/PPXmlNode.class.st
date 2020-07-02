@@ -36,6 +36,11 @@ PPXmlNode >> children [
 	^ #()
 ]
 
+{ #category : #copying }
+PPXmlNode >> copyWithInclusion [
+	^self copy
+]
+
 { #category : #accessing }
 PPXmlNode >> document [
 	"Answer the document that contains this node, or nil if this node is not currently part of a document."

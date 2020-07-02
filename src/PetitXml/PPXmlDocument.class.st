@@ -4,8 +4,21 @@ An XML root node.
 Class {
 	#name : #PPXmlDocument,
 	#superclass : #PPXmlParent,
+	#instVars : [
+		'baseURI'
+	],
 	#category : #'PetitXml-Nodes'
 }
+
+{ #category : #XI }
+PPXmlDocument >> baseURI [
+	^ baseURI
+]
+
+{ #category : #XI }
+PPXmlDocument >> baseURI: anObject [
+	baseURI := anObject
+]
 
 { #category : #accessing }
 PPXmlDocument >> document [

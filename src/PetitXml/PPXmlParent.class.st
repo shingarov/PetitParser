@@ -42,7 +42,7 @@ PPXmlParent >> hash [
 PPXmlParent >> postCopy [
 	super postCopy.
 	self setChildren: (self children
-		collect: [ :each | each copy ])
+		collect: [ :each | each copyWithInclusion ])
 ]
 
 { #category : #printing }

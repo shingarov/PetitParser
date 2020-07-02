@@ -69,6 +69,21 @@ PPXmlElement >> attributes [
 	^ attributes
 ]
 
+{ #category : #XI }
+PPXmlElement >> baseURI [
+	^self parent baseURI  "FIXME"
+]
+
+{ #category : #copying }
+PPXmlElement >> copyWithInclusion [
+	" Answer a copy of myself, performing the XInclude inclusion transformation. "
+	self name qualifiedName = 'xi:include' ifTrue: [
+		| href |
+		href := self attributeAt: 'href' ifAbsent: [self error].
+		^self baseURI get: href.
+	] ifFalse: [ ^self copy ]. "Not an include"
+]
+
 { #category : #comparing }
 PPXmlElement >> hash [
 	^ super hash bitXor: self name hash
